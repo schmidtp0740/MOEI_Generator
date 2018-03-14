@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"os"
 	"time"
 )
 
@@ -17,10 +18,14 @@ type payload struct {
 }
 
 func main() {
-	ticker := time.NewTicker(time.Millisecond * 5000)
+	var count = 0
+	ticker := time.NewTicker(time.Millisecond * 1000)
 	for range ticker.C {
 		call()
-
+		count++
+		if count >= 5 {
+			os.Exit(0)
+		}
 	}
 }
 
