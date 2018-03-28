@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"math/rand"
 	"net/http"
 	"os"
 	"time"
@@ -34,7 +35,7 @@ func call() {
 	t := int(time.Now().Unix())
 	m := payload{
 		"001",
-		80,
+		80 + rand.Intn(40),
 		"bpm",
 		t,
 	}
