@@ -31,7 +31,7 @@ func main() {
 }
 
 func call() {
-	url := "http://129.146.106.151:8080/data"
+	url := "http://129.213.177.1:8080/data"
 	t := int(time.Now().Unix())
 	m := payload{
 		"001",
